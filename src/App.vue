@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="upper-bar">
+      <img src="./assets/icons/minimize.svg" alt="-" @mousedown="clickHold()" />
+      <img src="./assets/icons/Resize.svg" alt />
+      <img src="./assets/icons/quit.svg" alt />
     </div>
-    <router-view />
+    <h1>Hello World</h1>
   </div>
 </template>
-
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({});
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -16,17 +20,20 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.upper-bar {
+  display: flex;
+  justify-content: flex-end;
+  img {
+    height: 15px;
+    width: 15px;
+    padding: 0 2px;
+  }
+  img:hover {
+    cursor: pointer;
+    filter: invert(0.6) sepia(0.5);
+  }
+  img:active {
+    scale: 0.5;
   }
 }
 </style>
